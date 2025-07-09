@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="DODA Digital - business automation and digital transformation">
+  <title>DODA Digital - Business Automation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" href="dodafav.png" sizes="favicon-32x32">
+  <link rel="stylesheet" href="dodacss.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a href="/" class="navbar-brand">
+        <img src="dodalogo.png" width="120" alt="DODA Digital" class="logo-white">
+        <img src="dodalogo.png" width="120" alt="DODA Digital" class="logo-black d-none">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">EN</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="doda.html">RU</a></li>
+              <li><a class="dropdown-item" href="dodakz.html">KZ</a></li>
+            </ul>
+          </li>
+        </ul>
+        <button class="btn btn-outline-light ms-3" data-bs-toggle="modal" data-bs-target="#call">
+          CONTACT US
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1>Digitalization and automation for your business</h1>
+          <p class="lead">We help companies transition to digital, automate routine processes, and improve business efficiency with modern technologies.</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn btn-primary btn-lg">Discuss your project</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/hero-automation.png" alt="Business Automation" class="img-fluid hero-image">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section bg-white">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <p class="lead">DODA Digital is a team of experts in digital transformation and business process automation.</p>
+          <p>Founded in 2025, our company specializes in implementing modern IT solutions that help businesses become more efficient and competitive.</p>
+          <p>We focus on creating customized solutions for automating routine operations, optimizing business processes, and digital transformation of companies.</p>
+          <p>Our approach combines deep understanding of business challenges with expertise in modern technologies.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="about-values">
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div class="value-content">
+                <h4>Automation</h4>
+                <p>Reduce operational costs through automation of routine processes</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fas fa-project-diagram"></i>
+              </div>
+              <div class="value-content">
+                <h4>Optimization</h4>
+                <p>Help build efficient business processes</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="value-content">
+                <h4>Results</h4>
+                <p>Focus on measurable performance indicators</p>
+              </div>
+            </div>
+            <div class="value-item">
+              <div class="value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <div class="value-content">
+                <h4>Innovation</h4>
+                <p>Use cutting-edge technologies to solve business challenges</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <p class="section-subtitle">Comprehensive solutions for digitalization and automation of your business</p>
+      
+      <div class="row services-row">
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cogs"></i>
+            </div>
+            <h3>Process Automation</h3>
+            <p>Implementation of RPA and other technologies for automating routine operations.</p>
+            <ul class="service-features">
+              <li>Robotic Process Automation</li>
+              <li>Document workflow automation</li>
+              <li>System integration</li>
+              <li>End-to-end analytics</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-laptop-code"></i>
+            </div>
+            <h3>Enterprise Systems</h3>
+            <p>Development and implementation of ERP, CRM and other business systems.</p>
+            <ul class="service-features">
+              <li>ERP systems</li>
+              <li>CRM systems</li>
+              <li>Project management</li>
+              <li>Business analytics</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3>Cloud Solutions</h3>
+            <p>Migration and deployment of cloud infrastructure.</p>
+            <ul class="service-features">
+              <li>Cloud services</li>
+              <li>Hybrid solutions</li>
+              <li>Data security</li>
+              <li>Backup solutions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row services-row">
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile Solutions</h3>
+            <p>Development of mobile applications for business.</p>
+            <ul class="service-features">
+              <li>Business applications</li>
+              <li>Personal accounts</li>
+              <li>Mobile CRM</li>
+              <li>Push notifications</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Data Analytics</h3>
+            <p>Collection, processing and visualization of business data.</p>
+            <ul class="service-features">
+              <li>BI systems</li>
+              <li>Dashboards</li>
+              <li>Predictive analytics</li>
+              <li>Data integration</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>Protection of data and digital infrastructure.</p>
+            <ul class="service-features">
+              <li>Security audits</li>
+              <li>Personal data protection</li>
+              <li>Backup solutions</li>
+              <li>Threat monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section bg-primary text-white">
+    <div class="container">
+      <h2 class="section-title text-white">Contact Us</h2>
+      <p class="section-subtitle">Ready to discuss automation for your business</p>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <form class="contact-form">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="mb-3">
+              <input type="tel" class="form-control" placeholder="Phone">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Describe your needs" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-light">Discuss project</button>
+          </form>
+        </div>
+        
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Address</h4>
+                <p>4 Zhanibek Tarkhan St, "Forum" Business Center, Astana, Kazakhstan</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Phone</h4>
+                <p>+7 (776) 678 0237</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Email</h4>
+                <p>office@dodadigital.kz</p>
+              </div>
+            </div>
+            
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="contact-text">
+                <h4>Working Hours</h4>
+                <p>Mon-Fri: 9:00 AM - 6:00 PM</p>
+                <p>Sat-Sun: Closed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer bg-dark text-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="footer-logo">
+            <img src="images/logo-white.svg" width="150" alt="DODA Digital">
+          </div>
+          <p class="footer-about">DODA Digital - experts in business automation and digital transformation. We help companies become more efficient with modern technologies.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-telegram-plane"></i></a>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-4">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4 col-md-4">
+          <h4>Subscribe to Newsletter</h4>
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Your email">
+              <button class="btn btn-primary" type="submit">OK</button>
+            </div>
+          </form>
+          <div class="footer-contacts">
+            <p><i class="fas fa-envelope me-2"></i> office@dodadigital.kz</p>
+            <p><i class="fas fa-phone-alt me-2"></i> +7 (776) 678 0237</p>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="footer-divider">
+      
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-md-6">
+            <p>&copy; 2025 DODA Digital. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-light me-3">Privacy Policy</a>
+            <a href="#" class="text-light">Terms of Use</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal fade" id="call" tabindex="-1" aria-labelledby="callLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="callLabel">Discuss Project</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+            </div>
+            <div class="mb-3">
+              <label for="emailInput" class="form-label">Email</label>
+              <input type="email" class="form-control" id="emailInput" placeholder="example@doda.digital" required>
+            </div>
+            <div class="mb-3">
+              <label for="phoneInput" class="form-label">Phone</label>
+              <input type="tel" class="form-control" id="phoneInput" placeholder="+1 (XXX) XXX-XXXX">
+            </div>
+            <div class="mb-3">
+              <label for="messageInput" class="form-label">Describe your needs</label>
+              <textarea class="form-control" id="messageInput" rows="3" placeholder="What processes would you like to automate?"></textarea>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="dodajsscripts.js"></script>
+</body>
+</html>
