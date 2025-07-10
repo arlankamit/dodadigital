@@ -80,69 +80,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // ========== Обработка форм ==========
   const forms = document.querySelectorAll('form');
-
+  
   forms.forEach(form => {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
-    
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData);
-
-      fetch('/send_email.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(result => {
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'alert alert-success alert-dismissible fade show';
-        alertDiv.style.position = 'fixed';
-        alertDiv.style.bottom = '20px';
-        alertDiv.style.right = '20px';
-        alertDiv.style.zIndex = '1000';
-        alertDiv.style.maxWidth = '300px';
-        alertDiv.innerHTML = `
-          <strong>Спасибо!</strong> ${result.message}
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      `  ;
       
-        document.body.appendChild(alertDiv);
+      // Создаем уведомление
+      const alertDiv = document.createElement('div');
+      alertDiv.className = 'alert alert-success alert-dismissible fade show';
+      alertDiv.style.position = 'fixed';
+      alertDiv.style.bottom = '20px';
+      alertDiv.style.right = '20px';
+      alertDiv.style.zIndex = '1000';
+      alertDiv.style.maxWidth = '300px';
+      alertDiv.innerHTML = `
+        <strong>Спасибо!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      `;
       
-        setTimeout(() => {
-          const bsAlert = new bootstrap.Alert(alertDiv);
-          bsAlert.close();
-        }, 5000);
+      document.body.appendChild(alertDiv);
       
-        form.reset();
+      // Закрытие через 5 секунд
+      setTimeout(() => {
+        const bsAlert = new bootstrap.Alert(alertDiv);
+        bsAlert.close();
+      }, 5000);
       
-        const modal = bootstrap.Modal.getInstance(document.getElementById('call'));
-        if (modal) {
-          modal.hide();
-        }
-      })
-      .catch(error => {
-        const alertDiv = document.createElement('div');
-        alertDiv.className = 'alert alert-danger alert-dismissible fade show';
-        alertDiv.style.position = 'fixed';
-        alertDiv.style.bottom = '20px';
-        alertDiv.style.right = '20px';
-        alertDiv.style.zIndex = '1000';
-        alertDiv.style.maxWidth = '300px';
-        alertDiv.innerHTML = `
-          <strong>Ошибка!</strong> Не удалось отправить заявку. Попробуйте еще раз.
-          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      `  ;
+      // Сбрасываем форму
+      this.reset();
       
-        document.body.appendChild(alertDiv);
-      
-        setTimeout(() => {
-          const bsAlert = new bootstrap.Alert(alertDiv);
-          bsAlert.close();
-        }, 5000);
-      });
+      // Закрываем модальное окно если есть
+      const modal = bootstrap.Modal.getInstance(document.getElementById('call'));
+      if (modal) {
+        modal.hide();
+      }
     });
   });
 
