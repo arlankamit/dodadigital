@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->Host = 'smtp.zoho.com';
         $mail->SMTPAuth = true;
         $mail->Username = 'office@dodadigital.kz';
-        $mail->Password = 'YOUR_ZOHO_PASSWORD'; // Пароль от Zoho Mail или App Password
+        $mail->Password = 'ZohoDoda12345!'; // Пароль от Zoho Mail или App Password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
