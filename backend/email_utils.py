@@ -1,25 +1,31 @@
 import smtplib
 from email.mime.text import MIMEText
 
-SMTP_SERVER = "smtp.yourserver.com"  # например, smtp.yandex.kz
-SMTP_PORT = 587
-SMTP_USER = "noreply@dodadigital.kz"
-SMTP_PASSWORD = "your_password"
+# Конфигурация (лучше вынести в .env позже)
+SMTP_SERVER = "smtp.zoho.com"
+SMTP_PORT = 465
+SMTP_USER = "office@dodadigital.kz"
+SMTP_PASSWORD = "ПАРОЛЬ_ОТ_ПОЧТЫ"  # Замени на ENV для безопасности
 
-TO_EMAIL = "office@dodadigital.kz"
+def send_email(name: str, email: str, message: str) -> dict:
+    subject = "Новое сообщение с сайта dodadigital.kz"
+    body = f"""
+    Имя: {name}
+    Email: {email}
 
-def send_email(subject, body):
+    Сообщение:
+    {message}
+    """
+
+    msg = MIMEText(body)
+    msg["Subject"] = subject
+    msg["From"] = SMTP_USER
+    msg["To"] = SMTP_USER
+
     try:
-        msg = MIMEText(body)
-        msg["Subject"] = subject
-        msg["From"] = SMTP_USER
-        msg["To"] = TO_EMAIL
-
-        with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
-            server.starttls()
+        with smtplib.SMTP_SSL(SMTP_SERVER, SMTP_PORT) as server:
             server.login(SMTP_USER, SMTP_PASSWORD)
-            server.sendmail(SMTP_USER, TO_EMAIL, msg.as_string())
-        return True
+            server.sendmail(SMTP_USER, SMTP_USER, msg.as_string())
+        return {"success": True}
     except Exception as e:
-        print(f"Email send error: {e}")
-        return False
+        return {"success": False, "error": str(e)}
