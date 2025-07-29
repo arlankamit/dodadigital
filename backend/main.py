@@ -1,12 +1,10 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-import smtplib
-from email.mime.text import MIMEText
+from email_utils import send_email  # импорт
 
 app = FastAPI()
 
-# Разрешить CORS
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # или ["https://dodadigital.kz"]
@@ -21,27 +19,5 @@ class EmailData(BaseModel):
     message: str
 
 @app.post("/send-email")
-def send_email(data: EmailData):
-    sender_email = "office@dodadigital.kz"  # Отправитель
-    receiver_email = "office@dodadigital.kz"  # Получатель
-    subject = "Новое сообщение с сайта"
-    
-    body = f"""
-    Имя: {data.name}
-    Email: {data.email}
-    Сообщение:
-    {data.message}
-    """
-
-    msg = MIMEText(body)
-    msg["Subject"] = subject
-    msg["From"] = sender_email
-    msg["To"] = receiver_email
-
-    try:
-        with smtplib.SMTP_SSL("smtp.zoho.com", 465) as server:
-            server.login("office@dodadigital.kz", "ПАРОЛЬ_ОТ_ПОЧТЫ")
-            server.sendmail(sender_email, receiver_email, msg.as_string())
-        return {"success": True}
-    except Exception as e:
-        return {"success": False, "error": str(e)}
+def handle_email(data: EmailData):
+    return send_email(data.name, data.email, data.message)
