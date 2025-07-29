@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from email_utils import send_email  # импорт
+from email_utils import send_email
 
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # или ["https://dodadigital.kz"]
+    allow_origins=["*"],  # В проде замени на ["https://dodadigital.kz"]
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
