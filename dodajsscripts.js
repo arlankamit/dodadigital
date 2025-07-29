@@ -1,3 +1,20 @@
+async function sendEmail(name, email, message) {
+  try {
+    const response = await fetch("https://api.dodadigital.kz/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, message })
+    });
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   // ========== Навбар при скролле ==========
   const navbar = document.querySelector('.navbar');
@@ -82,37 +99,40 @@ document.addEventListener('DOMContentLoaded', function() {
   const forms = document.querySelectorAll('form');
   
   forms.forEach(form => {
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
-      
-      // Создаем уведомление
-      const alertDiv = document.createElement('div');
-      alertDiv.className = 'alert alert-success alert-dismissible fade show';
-      alertDiv.style.position = 'fixed';
-      alertDiv.style.bottom = '20px';
-      alertDiv.style.right = '20px';
-      alertDiv.style.zIndex = '1000';
-      alertDiv.style.maxWidth = '300px';
-      alertDiv.innerHTML = `
-        <strong>Спасибо!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-      `;
-      
-      document.body.appendChild(alertDiv);
-      
-      // Закрытие через 5 секунд
-      setTimeout(() => {
-        const bsAlert = new bootstrap.Alert(alertDiv);
-        bsAlert.close();
-      }, 5000);
-      
-      // Сбрасываем форму
-      this.reset();
-      
-      // Закрываем модальное окно если есть
-      const modal = bootstrap.Modal.getInstance(document.getElementById('call'));
-      if (modal) {
-        modal.hide();
+      const name = this.querySelector('[name="name"]').value;
+      const email = this.querySelector('[name="email"]').value;
+      const message = this.querySelector('[name="message"]').value;
+
+      const result = await sendEmail(name, email, message);
+
+      if (result.success) {
+        // Уведомление
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-success alert-dismissible fade show';
+        alertDiv.style.position = 'fixed';
+        alertDiv.style.bottom = '20px';
+        alertDiv.style.right = '20px';
+        alertDiv.style.zIndex = '1000';
+        alertDiv.style.maxWidth = '300px';
+        alertDiv.innerHTML = `
+          <strong>Спасибо!</strong> Ваша заявка принята. Мы свяжемся с вами в ближайшее время.
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        document.body.appendChild(alertDiv);
+
+        setTimeout(() => {
+          const bsAlert = new bootstrap.Alert(alertDiv);
+          bsAlert.close();
+        }, 5000);
+
+        this.reset();
+
+        const modal = bootstrap.Modal.getInstance(document.getElementById('call'));
+        if (modal) modal.hide();
+      } else {
+        alert("Ошибка при отправке: " + (result.error || "Неизвестная ошибка"));
       }
     });
   });
