@@ -9,15 +9,17 @@ SMTP_USER = os.environ.get("EMAIL_HOST_USER")
 SMTP_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_RECEIVER = os.environ.get("EMAIL_RECEIVER", SMTP_USER)
 
-def send_email(name: str, email: str, message: str) -> dict:
+def send_email(name: str, email: str, message: str, phone: str) -> dict:
     subject = "Новое сообщение с сайта dodadigital.kz"
     body = f"""
 Имя: {name}
 Email: {email}
+Телефон: {phone}
 
 Сообщение:
 {message}
-    """
+"""
+
 
     msg = MIMEText(body)
     msg["Subject"] = subject
