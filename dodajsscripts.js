@@ -1,11 +1,11 @@
-async function sendEmail(name, email, message) {
+async function sendEmail(name, email, message, phone) {
   try {
     const response = await fetch("https://api.dodadigital.kz/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ name, email, message })
+      body: JSON.stringify({ name, email, message, phone })
     });
 
     const result = await response.json();
@@ -104,9 +104,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const name = this.querySelector('[name="name"]').value;
       const email = this.querySelector('[name="email"]').value;
       const message = this.querySelector('[name="message"]').value;
-
-      const result = await sendEmail(name, email, message);
-
+      const phone = this.querySelector('[name="phone"]').value;
+      
+      const result = await sendEmail(name, email, message, phone);
+      
       if (result.success) {
         // Уведомление
         const alertDiv = document.createElement('div');
