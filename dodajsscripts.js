@@ -1,6 +1,6 @@
 async function sendEmail(name, email, message, phone) {
   try {
-    const response = await fetch("https://api.dodadigital.kz/send-email", {
+    const response = await fetch("https://dodaserver.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
