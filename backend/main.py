@@ -17,6 +17,7 @@ class EmailData(BaseModel):
     name: str
     email: str
     message: str
+    phone: str  # <== добавь это поле
 
 @app.get("/")  # ⬅️ добавь это
 def root():
@@ -24,4 +25,4 @@ def root():
 
 @app.post("/send-email")
 def handle_email(data: EmailData):
-    return send_email(data.name, data.email, data.message)
+    return send_email(data.name, data.email, data.message, data.phone)
