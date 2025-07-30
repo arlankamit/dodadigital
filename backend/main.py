@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # В проде замени на ["https://dodadigital.kz"]
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -17,6 +17,10 @@ class EmailData(BaseModel):
     name: str
     email: str
     message: str
+
+@app.get("/")  # ⬅️ добавь это
+def root():
+    return {"message": "Doda API is running."}
 
 @app.post("/send-email")
 def handle_email(data: EmailData):
