@@ -1,6 +1,6 @@
 async function sendEmail(name, email, message, phone) {
   try {
-    const response = await fetch("https://dodaserver.onrender.com", {
+    const response = await fetch("https://dodaserver.onrender.com/send-email", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -153,3 +153,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.opacity = '1';
   }, 100);
 });
+
