@@ -2,3 +2,6 @@ fastapi
 uvicorn[standard]
 python-dotenv
 pydantic
+imapclient
+pyzmail36
+requests
