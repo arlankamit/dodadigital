@@ -1,9 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from email_utils import send_email
-from imap_reader import check_emails_and_reply
-from whatsapp_utils import send_whatsapp_message
+from backend.imap_reader import check_emails_and_reply
+from backend.email_utils import send_email
+from backend.whatsapp_utils import send_whatsapp_message  # если используешь
+
 
 app = FastAPI()
 
