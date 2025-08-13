@@ -146,3 +146,11 @@ venv/
 # macOS
 .DS_Store
 
+# env & secrets
+.env
+backend/.env
+*.bak_*
+
+# logs
+logs/
+*.log
