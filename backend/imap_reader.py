@@ -2,8 +2,8 @@ import os
 import imapclient
 import pyzmail36
 import re
-from .email_utils import send_email_reply
-from .logger import get_logger
+from email_utils import send_email_reply
+from logger import get_logger
 
 log = get_logger("email_poller")
 

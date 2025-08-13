@@ -1,7 +1,7 @@
 import os
 import smtplib
 from email.mime.text import MIMEText
-from .logger import get_logger
+from logger import get_logger
 
 log = get_logger("email_poller")
 

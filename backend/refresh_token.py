@@ -3,7 +3,7 @@ import shutil
 import datetime as dt
 import requests
 from dotenv import load_dotenv
-from .logger import get_logger
+from logger import get_logger
 
 log = get_logger()
 
