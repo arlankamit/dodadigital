@@ -6,9 +6,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
-from .logger import get_logger
-from .whatsapp_utils import send_whatsapp_text
-from .imap_reader import check_emails_and_reply
+from logger import get_logger
+from whatsapp_utils import send_whatsapp_text
+from imap_reader import check_emails_and_reply
 
 load_dotenv()
 log = get_logger()
